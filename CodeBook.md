@@ -107,7 +107,7 @@ The units used for the accelerations (total and body) are 'g's (gravity of earth
 
 The gyroscope units are rad/seg. 
 
-In R script, ActivityType variable is factor type. SubjectId variable is integer type. All the other variables are numeric type.
+In the tidy datset created by R script, ActivityType variable is factor type. SubjectId variable is integer type. All the other variables are numeric type.
 
 # Transformations
 
@@ -117,21 +117,21 @@ The following transformations have been carried out on the source data to get th
 
 2. Merge the training and the test sets to create one dataset.
 
-	a) First, merge Train and Test data to create 3 datasets for X/'Accelerometer and Gyrometer measurements', Y/Activities and Subjects. The datasets created are X_total, Y_total and Sub_total.
+	a) First, merge Train and Test data to create 3 datasets for X/'Accelerometer and Gyrometer measurements', Y/'Activities' and Subjects. The datasets created are X_total, Y_total and Sub_total.
 
 	b) Assign column names.
 
-	c) Merge X,Y and Sub data sets into one data set called merged_data.
+	c) Merge X,Y and Sub data sets into one data set called 'merged_data'.
 
 3. Extract only the measurements on the mean and standard deviation for each measurement.
 
-	a) Remove duplicate measurements so that dplyr function - select can execute properly.
+	a) Remove duplicate measurements from 'merged_data' so that dplyr function - select() can execute properly.
 
-	b) Select only the required columns (subjectId, activityId, and columns containing "mean" and "std").
+	b) Select only the required columns (subjectId, activityId, and columns containing "mean" and "std") from merged_data.
 
 4. Appropriately label the data set with descriptive variable names. (Already done in 2.b)
 
-5. From the data set in step 4, create a second, independent tidy data set called "tidy-data.txt" with the average of each variable for each activity and each subject.
+5. From the 'merged_data' data set, create a second, independent tidy data set 'summary' with the average of each variable for each activity and each subject. Write summary dataset to the file 'tidy-data.txt'
 
 6. Print message - "Tidy dataset created."
 
