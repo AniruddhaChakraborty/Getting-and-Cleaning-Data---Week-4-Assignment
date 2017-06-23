@@ -3,7 +3,7 @@ Getting and Cleaning Data - Week-4 Assignment
 
 This repository contains the R script for performing analysis which produces a tidy data set on execution. It also includes documentation files required for the assignment.
 
-#Files
+# Files
 
 run_analysis.R is the R script for performing analysis. It does the following -
 
