@@ -11,17 +11,17 @@ Here are the data for the project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
+It mainly contains - Train data (X_train, Y_train and subject_train), Test Data (X_test,Y_test and subject_test), Feature Vector and Activity Labels.
 
 # Tidy Data
 
 There are 68 variables in this data set (tidy-data.txt). Each row contains data related to 1 activity for a certain person.
 
-There are data for 30 persons/subjects, each one was tracked for 6 activities , so there are a total of 180 rows of data.
+Since, there are data for 30 persons or subjects, and each one performed 6 activities , so there are a total of 180 rows of data.
 
-Each row contains data for 66 variables, each one being average of raw measurements for each activity and each subject.
+Each row contains data for 66 variables, each one being average of raw measurements for Activity - Subject combination.
 
-SubjectId - Subject column is numbered sequentially from 1 to 30.
+SubjectId - Subject column is numbered sequentially from 1 to 30 as there are 30 volunteers.
 
 ActivityType - It can be one of these values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
@@ -117,17 +117,17 @@ The following transformations have been carried out on the source data to get th
 
 2. Merge the training and the test sets to create one dataset.
 
-a) First,merge Train and Test data to create 3 datasets for X/'Accelerometer and Gyrometer measurements', Y/Activities and Subjects. The datasets created are X_total, Y_total and Sub_total.
+	a) First, merge Train and Test data to create 3 datasets for X/'Accelerometer and Gyrometer measurements', Y/Activities and Subjects. The datasets created are X_total, Y_total and Sub_total.
 
-b) Assign column names.
+	b) Assign column names.
 
-c) Merge X,Y and Sub data sets into one data set called merged_data.
+	c) Merge X,Y and Sub data sets into one data set called merged_data.
 
 3. Extract only the measurements on the mean and standard deviation for each measurement.
 
-a) Remove duplicate measurements so that dplyr function - select can execute properly.
+	a) Remove duplicate measurements so that dplyr function - select can execute properly.
 
-b) Select only the required columns (subjectId, activityId, and columns containing "mean" and "std").
+	b) Select only the required columns (subjectId, activityId, and columns containing "mean" and "std").
 
 4. Appropriately label the data set with descriptive variable names. (Already done in 2.b)
 
